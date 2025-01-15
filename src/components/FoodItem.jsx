@@ -7,7 +7,7 @@ const FoodItem = () => {
     <div className='mt-8 flex flex-1 flex-wrap gap-8 justify-around '>
       {
         FoodData.map((food) => (
-          <FoodCard key={food.id} id={food.id} name={food.name} img={food.img} price={food.price} desc={food.desc} rating={food.rating} />
+          <FoodCard key={food.id} id={food.id} name={food.name} img={food.img} price={food.price} desc={food.desc} rating={food.rating}  />
 
         ))
       }

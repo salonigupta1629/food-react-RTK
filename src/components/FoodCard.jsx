@@ -18,7 +18,8 @@ export default function FoodCard({ id, img, name, price, desc, rating }) {
                 <span className="flex justify-start items-center gap-1">
                     <FaStar className="text-yellow-400" />{rating}
                 </span>
-                <button onClick={() => { dispatch(addTocart({ id, name, price, img, rating, qty: 1 })); }} className=' px-1 py-1  bg-yellow-500 text-white hover:bg-black rounded-lg font-medium '>AddToCart</button>
+                <button onClick={() => { dispatch(addTocart({ id, name, price, img, rating, qty: 1 })); }} className=' px-1 py-1  bg-yellow-500
+                 text-white hover:bg-black rounded-lg font-medium '>AddToCart</button>
             </div>
         </div>
     )

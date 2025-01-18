@@ -4,6 +4,7 @@ import { IoIosAdd } from "react-icons/io";
 import { HiMinusSm } from "react-icons/hi";
 import { useDispatch } from 'react-redux';
 import { decreaseQty, increaseQty, removeFromcart } from '../redux/cartSlice';
+import toast from 'react-hot-toast';
 
 
 const ItemCart = ({ id, name, img, price,qty }) => {
@@ -16,7 +17,10 @@ const ItemCart = ({ id, name, img, price,qty }) => {
       <div className='flex flex-col justify-between items-center'>
         <div className='flex flex-1  justify-between items-center'>
           <p className="text-sm font-semibold ">{name.slice(0,20)}..</p>
-         <MdDelete className='' onClick={() => dispatch(removeFromcart({id,name,img, price,qty}))}/>
+         <MdDelete className='' onClick={() =>{ dispatch(removeFromcart({id,name,img, price,qty}));
+          toast(` ${name} Removed!`,{
+            icon: "👋",
+  }) }}/>
         </div>
         <div className='flex flex-1 justify-between items-center  mt-1 '>
           <p className='text-yellow-300 font-semibold ml-[-16px] '>₹{price}</p>

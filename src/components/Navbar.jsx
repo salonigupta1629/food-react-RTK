@@ -1,4 +1,8 @@
+import { useDispatch } from "react-redux";
+import { setSearch } from "../redux/searchSlice";
+
 const Navbar = () => {
+    const dispatch = useDispatch();
     return(
        <nav>
         <div className="flex flex-1 justify-between items-center p-3">
@@ -7,7 +11,7 @@ const Navbar = () => {
        <p className="text-2xl font-bold mt-1">FoodCart</p>
        </span>
             <span>
-            <input type="text" className="px-8 py-2 rounded-l-lg outline-none border-gray-400 border-2" placeholder="Search here"/>
+            <input type="text" onChange={(e) => dispatch(setSearch(e.target.value))} className="px-8 py-2 rounded-l-lg outline-none border-gray-400 border-2" placeholder="Search here"/>
             <button className="px-3 py-2 bg-yellow-500 hover:bg-black hover:text-white hover:border-black rounded-r-lg border-gray-400 border-2">Search</button>
             </span>
         </div>
